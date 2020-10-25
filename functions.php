@@ -1,214 +1,60 @@
 <?php
 
 add_theme_support('post-thumbnails');
-set_post_thumbnail_size(800, 480);
-add_image_size('vignette', 220, 100, true);
 
-function new_excerpt_length($length) {
-    return 10; // Nombre de mots limite
-}
-add_filter('excerpt_length', 'new_excerpt_length');
+// Register Custom Post Type Chalets
+function cpt_chalets() {
 
-// menu
-function cw4_creer_menu() {
-	register_nav_menu('menu_principal', 'Menu principal');
-}
-add_action('init', 'cw4_creer_menu');
-
-// acf options
-if ( function_exists('acf_add_options_page') ) {
-
-    // on ajoute une page d'option
-    acf_add_options_page(array(
-        'page_title'   => 'Options générales',
-        'menu_title'   => 'Options générales',
-        'menu_slug'    => 'cw4-theme-options-generales',
-        'capability'   => 'edit_posts',
-        'redirect'     => false
-    ));
-
-    // on ajoute une sous-page à la page précédente via le paramètre parent_slug
-    acf_add_options_sub_page(array(
-        'page_title'   => 'Options du pied de page',
-        'menu_title'   => 'Pied de page',
-        'parent_slug'  => 'cw4-theme-options-generales',
-    ));
-}
-
-// Register Custom Post Type
-function cw4_films() {
-
-	$labels = array(
-		'name'                  => _x( 'Films', 'Post Type General Name', 'cinetim' ),
-		'singular_name'         => _x( 'Film', 'Post Type Singular Name', 'cinetim' ),
-		'menu_name'             => __( 'Films', 'cinetim' ),
-		'name_admin_bar'        => __( 'Post Type', 'cinetim' ),
-		'archives'              => __( 'Item Archives', 'cinetim' ),
-		'attributes'            => __( 'Item Attributes', 'cinetim' ),
-		'parent_item_colon'     => __( 'Parent Item:', 'cinetim' ),
-		'all_items'             => __( 'Tous les films', 'cinetim' ),
-		'add_new_item'          => __( 'Ajouter un film', 'cinetim' ),
-		'add_new'               => __( 'Ajouter un film', 'cinetim' ),
-		'new_item'              => __( 'Nouveau film', 'cinetim' ),
-		'edit_item'             => __( 'Éditer le film', 'cinetim' ),
-		'update_item'           => __( 'MAJ le film', 'cinetim' ),
-		'view_item'             => __( 'View Item', 'cinetim' ),
-		'view_items'            => __( 'View Items', 'cinetim' ),
-		'search_items'          => __( 'Search Item', 'cinetim' ),
-		'not_found'             => __( 'Not found', 'cinetim' ),
-		'not_found_in_trash'    => __( 'Not found in Trash', 'cinetim' ),
-		'featured_image'        => __( 'Featured Image', 'cinetim' ),
-		'set_featured_image'    => __( 'Set featured image', 'cinetim' ),
-		'remove_featured_image' => __( 'Remove featured image', 'cinetim' ),
-		'use_featured_image'    => __( 'Use as featured image', 'cinetim' ),
-		'insert_into_item'      => __( 'Insert into item', 'cinetim' ),
-		'uploaded_to_this_item' => __( 'Uploaded to this item', 'cinetim' ),
-		'items_list'            => __( 'Items list', 'cinetim' ),
-		'items_list_navigation' => __( 'Items list navigation', 'cinetim' ),
-		'filter_items_list'     => __( 'Filter items list', 'cinetim' ),
-	);
-	$args = array(
-		'label'                 => __( 'Film', 'cinetim' ),
-		'description'           => __( 'Films', 'cinetim' ),
-		'labels'                => $labels,
-		'supports'              => array( 'title', 'editor', 'thumbnail' ),
-		'taxonomies'            => array( 'category', 'post_tag' ),
-		'hierarchical'          => false,
-		'public'                => true,
-		'show_ui'               => true,
-		'show_in_menu'          => true,
-		'menu_position'         => 5,
-		'menu_icon'             => 'dashicons-editor-video',
-		'show_in_admin_bar'     => true,
-		'show_in_nav_menus'     => true,
-		'can_export'            => true,
-		'has_archive'           => true,
-		'exclude_from_search'   => false,
-		'publicly_queryable'    => true,
-		'capability_type'       => 'page',
-	);
-	register_post_type( 'film', $args );
+    $labels = array(
+        'name'                  => _x( 'Chalets', 'Post Type General Name', 'text_domain' ),
+        'singular_name'         => _x( 'Chalet', 'Post Type Singular Name', 'text_domain' ),
+        'menu_name'             => __( 'Chalets', 'text_domain' ),
+        'name_admin_bar'        => __( 'Chalets', 'text_domain' ),
+        'archives'              => __( 'Chalets Archives', 'text_domain' ),
+        'attributes'            => __( 'Chalets Attributes', 'text_domain' ),
+        'parent_item_colon'     => __( 'Parent Chalets:', 'text_domain' ),
+        'all_items'             => __( 'All Chalets', 'text_domain' ),
+        'add_new_item'          => __( 'Add New Chalets', 'text_domain' ),
+        'add_new'               => __( 'Add Chalet', 'text_domain' ),
+        'new_item'              => __( 'New Chalet', 'text_domain' ),
+        'edit_item'             => __( 'Edit Chalet', 'text_domain' ),
+        'update_item'           => __( 'Update Chalet', 'text_domain' ),
+        'view_item'             => __( 'View Chalet', 'text_domain' ),
+        'view_items'            => __( 'View Chalets', 'text_domain' ),
+        'search_items'          => __( 'Search Chalet', 'text_domain' ),
+        'not_found'             => __( 'Not found', 'text_domain' ),
+        'not_found_in_trash'    => __( 'Not found in Trash', 'text_domain' ),
+        'featured_image'        => __( 'Featured Image', 'text_domain' ),
+        'set_featured_image'    => __( 'Set featured image', 'text_domain' ),
+        'remove_featured_image' => __( 'Remove featured image', 'text_domain' ),
+        'use_featured_image'    => __( 'Use as featured image', 'text_domain' ),
+        'insert_into_item'      => __( 'Insert into item', 'text_domain' ),
+        'uploaded_to_this_item' => __( 'Uploaded to this item', 'text_domain' ),
+        'items_list'            => __( 'Items list', 'text_domain' ),
+        'items_list_navigation' => __( 'Items list navigation', 'text_domain' ),
+        'filter_items_list'     => __( 'Filter items list', 'text_domain' ),
+    );
+    $args = array(
+        'label'                 => __( 'Chalet', 'text_domain' ),
+        'description'           => __( 'Post Type Description', 'text_domain' ),
+        'labels'                => $labels,
+        'supports'              => array( 'title', 'editor', 'thumbnail', 'custom-fields' ),
+        'taxonomies'            => array( 'category', 'post_tag' ),
+        'hierarchical'          => false,
+        'public'                => true,
+        'show_ui'               => true,
+        'show_in_menu'          => true,
+        'menu_position'         => 5,
+        'show_in_admin_bar'     => true,
+        'show_in_nav_menus'     => true,
+        'can_export'            => true,
+        'has_archive'           => true,
+        'exclude_from_search'   => false,
+        'publicly_queryable'    => true,
+        'capability_type'       => 'page',
+    );
+    register_post_type( 'chalets', $args );
 
 }
-add_action( 'init', 'cw4_films', 0 );
+add_action( 'init', 'cpt_chalets', 0 );
 
-function cw4_acteurs() {
-
-	$labels = array(
-		'name'                  => _x( 'Acteurs', 'Post Type General Name', 'cinetim' ),
-		'singular_name'         => _x( 'Acteur', 'Post Type Singular Name', 'cinetim' ),
-		'menu_name'             => __( 'Acteurs', 'cinetim' ),
-		'name_admin_bar'        => __( 'Post Type', 'cinetim' ),
-		'archives'              => __( 'Item Archives', 'cinetim' ),
-		'attributes'            => __( 'Item Attributes', 'cinetim' ),
-		'parent_item_colon'     => __( 'Parent Item:', 'cinetim' ),
-		'all_items'             => __( 'Tous les acteurs', 'cinetim' ),
-		'add_new_item'          => __( 'Ajouter un acteur', 'cinetim' ),
-		'add_new'               => __( 'Ajouter un acteur', 'cinetim' ),
-		'new_item'              => __( 'Nouveau acteur', 'cinetim' ),
-		'edit_item'             => __( 'Éditer le acteur', 'cinetim' ),
-		'update_item'           => __( 'MAJ le acteur', 'cinetim' ),
-		'view_item'             => __( 'View Item', 'cinetim' ),
-		'view_items'            => __( 'View Items', 'cinetim' ),
-		'search_items'          => __( 'Search Item', 'cinetim' ),
-		'not_found'             => __( 'Not found', 'cinetim' ),
-		'not_found_in_trash'    => __( 'Not found in Trash', 'cinetim' ),
-		'featured_image'        => __( 'Featured Image', 'cinetim' ),
-		'set_featured_image'    => __( 'Set featured image', 'cinetim' ),
-		'remove_featured_image' => __( 'Remove featured image', 'cinetim' ),
-		'use_featured_image'    => __( 'Use as featured image', 'cinetim' ),
-		'insert_into_item'      => __( 'Insert into item', 'cinetim' ),
-		'uploaded_to_this_item' => __( 'Uploaded to this item', 'cinetim' ),
-		'items_list'            => __( 'Items list', 'cinetim' ),
-		'items_list_navigation' => __( 'Items list navigation', 'cinetim' ),
-		'filter_items_list'     => __( 'Filter items list', 'cinetim' ),
-	);
-	$args = array(
-		'label'                 => __( 'Acteur', 'cinetim' ),
-		'description'           => __( 'Acteurs', 'cinetim' ),
-		'labels'                => $labels,
-		'supports'              => array( 'title', 'editor', 'thumbnail' ),
-		'taxonomies'            => array( 'category', 'post_tag' ),
-		'hierarchical'          => false,
-		'public'                => true,
-		'show_ui'               => true,
-		'show_in_menu'          => true,
-		'menu_position'         => 5,
-		'menu_icon'             => 'dashicons-businessman',
-		'show_in_admin_bar'     => true,
-		'show_in_nav_menus'     => true,
-		'can_export'            => true,
-		'has_archive'           => true,
-		'exclude_from_search'   => false,
-		'publicly_queryable'    => true,
-		'capability_type'       => 'page',
-	);
-	register_post_type( 'acteur', $args );
-
-}
-add_action( 'init', 'cw4_acteurs', 0 );
-
-function cw4_realisateurs() {
-
-	$labels = array(
-		'name'                  => _x( 'Réalisateurs', 'Post Type General Name', 'cinetim' ),
-		'singular_name'         => _x( 'Réalisateur', 'Post Type Singular Name', 'cinetim' ),
-		'menu_name'             => __( 'Réalisateurs', 'cinetim' ),
-		'name_admin_bar'        => __( 'Post Type', 'cinetim' ),
-		'archives'              => __( 'Item Archives', 'cinetim' ),
-		'attributes'            => __( 'Item Attributes', 'cinetim' ),
-		'parent_item_colon'     => __( 'Parent Item:', 'cinetim' ),
-		'all_items'             => __( 'Tous les réalisateurs', 'cinetim' ),
-		'add_new_item'          => __( 'Ajouter un réalisateur', 'cinetim' ),
-		'add_new'               => __( 'Ajouter un réalisateur', 'cinetim' ),
-		'new_item'              => __( 'Nouveau réalisateur', 'cinetim' ),
-		'edit_item'             => __( 'Éditer le réalisateur', 'cinetim' ),
-		'update_item'           => __( 'MAJ le réalisateur', 'cinetim' ),
-		'view_item'             => __( 'View Item', 'cinetim' ),
-		'view_items'            => __( 'View Items', 'cinetim' ),
-		'search_items'          => __( 'Search Item', 'cinetim' ),
-		'not_found'             => __( 'Not found', 'cinetim' ),
-		'not_found_in_trash'    => __( 'Not found in Trash', 'cinetim' ),
-		'featured_image'        => __( 'Featured Image', 'cinetim' ),
-		'set_featured_image'    => __( 'Set featured image', 'cinetim' ),
-		'remove_featured_image' => __( 'Remove featured image', 'cinetim' ),
-		'use_featured_image'    => __( 'Use as featured image', 'cinetim' ),
-		'insert_into_item'      => __( 'Insert into item', 'cinetim' ),
-		'uploaded_to_this_item' => __( 'Uploaded to this item', 'cinetim' ),
-		'items_list'            => __( 'Items list', 'cinetim' ),
-		'items_list_navigation' => __( 'Items list navigation', 'cinetim' ),
-		'filter_items_list'     => __( 'Filter items list', 'cinetim' ),
-	);
-	$args = array(
-		'label'                 => __( 'Réalisateur', 'cinetim' ),
-		'description'           => __( 'Réalisateurs', 'cinetim' ),
-		'labels'                => $labels,
-		'supports'              => array( 'title', 'editor', 'thumbnail' ),
-		'taxonomies'            => array( 'category', 'post_tag' ),
-		'hierarchical'          => false,
-		'public'                => true,
-		'show_ui'               => true,
-		'show_in_menu'          => true,
-		'menu_position'         => 5,
-		'menu_icon'             => 'dashicons-megaphone',
-		'show_in_admin_bar'     => true,
-		'show_in_nav_menus'     => true,
-		'can_export'            => true,
-		'has_archive'           => true,
-		'exclude_from_search'   => false,
-		'publicly_queryable'    => true,
-		'capability_type'       => 'page',
-	);
-	register_post_type( 'realisateur', $args );
-
-}
-add_action( 'init', 'cw4_realisateurs', 0 );
-
-
-// enlever les attributs width / height des balises images insérées
-// avec the_post_thumbnail
-function cw4_img_no_attributes( $html, $post_id, $post_image_id ) {
-    $html = preg_replace( '/(width|height)=\"\d*\"\s/', "", $html );
-    return $html;
-}
-add_filter('post_thumbnail_html', 'cw4_img_no_attributes', 10, 3);
