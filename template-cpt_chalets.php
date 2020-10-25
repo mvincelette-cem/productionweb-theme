@@ -1,3 +1,7 @@
+<?php
+/* Template Name: template-cw4_invites */
+?>
+
 <?php get_header(); ?>
 
 
