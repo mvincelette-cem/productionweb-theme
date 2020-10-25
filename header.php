@@ -21,9 +21,9 @@
 
 <div class="menu-menu-princ-overlay" id="overlay">
     <div class="menu-menu-princ-left">
-        <a href="front-page.html"><img class="menu-menu-princ-logo"
-                                       src="<?php bloginfo('template_url'); ?>/images/logo.svg"
-                                       alt="Logo Pourvoirie Lac-du-cerf"></a>
+        <a href="front-page.php"><img class="menu-menu-princ-logo"
+                                      src="<?php bloginfo('template_url'); ?>/images/logo.svg"
+                                      alt="Logo Pourvoirie Lac-du-cerf"></a>
         <ul class="menu-contacts">
             <li class="menu-contacts-elems"><span class="iconify" data-inline="false" data-icon="bi:telephone"
                                                   style="color: #69b966; font-size: 40px;"></span> <a
@@ -40,7 +40,7 @@
     </div>
     <div class="menu-menu-princ-right">
         <ul class="menu-elements">
-            <li data-animation="fadeInLeft" data-animation-delay="1s" class="animateMe"><a href="template-chalets.html">Nos
+            <li data-animation="fadeInLeft" data-animation-delay="1s" class="animateMe"><a href="template-cpt_chalets.php">Nos
                     Chalets</a></li>
             <li data-animation="fadeInLeft" data-animation-delay="1.2s" class="animateMe"><a
                         href="template-activites.html">Pêche</a></li>
