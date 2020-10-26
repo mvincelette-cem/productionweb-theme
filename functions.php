@@ -53,7 +53,7 @@ function cpt_chalets() {
         'publicly_queryable'    => true,
         'capability_type'       => 'page',
     );
-    register_post_type( 'chalets', $args );
+    register_post_type( 'cpt_chalets', $args );
 
 }
 add_action( 'init', 'cpt_chalets', 0 );

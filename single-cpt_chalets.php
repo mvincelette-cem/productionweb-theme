@@ -1,162 +1,51 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<?php get_header(); ?>
 
-    <title>Nos Chalets</title>
-
-    <link href="https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,400;0,700;1,700&family=Spectral:ital,wght@0,200;0,400;1,400;1,600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css"/>
-    <link rel="stylesheet" href="css/main.css">
-    <script src="https://code.iconify.design/1/1.0.6/iconify.min.js"></script>
-    <script src="js/script.js"></script>
-</head>
-<body>
-
-<header class="header">
-
-    <div class="header-content">
-        <img class="header-logo" src="images/logo.svg" alt="Logo Pourvoirie Lac-du-cerf">
-        <div class="header-menu-bouton">
-            <a href="#" class="header-reservez-link">Réservez maintenant</a>
-            <a href="#" class="header-hamburger" id="toggle"><span class="iconify" data-inline="false" data-icon="clarity:menu-line"
-                                                               style="font-size: 32px;"></span></a>
-        </div>
-    </div>
-
-</header>
-
-<div class="menu-menu-princ-overlay" id="overlay">
-    <div class="menu-menu-princ-left">
-        <a href="front-page.php"><img class="menu-menu-princ-logo" src="images/logo.svg" alt="Logo Pourvoirie Lac-du-cerf"></a>
-        <ul class="menu-contacts">
-            <li class="menu-contacts-elems"><span class="iconify" data-inline="false" data-icon="bi:telephone"
-                                                  style="color: #69b966; font-size: 40px;"></span> <a
-                    href="tel:819-597-2011">819 597-2011</a></li>
-            <li class="menu-contacts-elems"><span class="iconify" data-inline="false" data-icon="codicon:mail"
-                                                  style="color: #69b966; font-size: 40px;"></span> <a
-                    href="mailto:pourvoirielacducerf2020@gmail.com">pourvoirielacducerf2020@gmail.com</a>
-            </li>
-            <li class="menu-contacts-elems"><span class="iconify" data-inline="false" data-icon="carbon:location"
-                                                  style="color: #69b966; font-size: 48px;"></span> <a href="">17 chemin
-                filion, Lac-du-cerf, QC, J0W1S0</a></li>
-        </ul>
-        <a href="#" class="menu-langue-desktop menu-menu-princ-langue">En</a>
-    </div>
-    <div class="menu-menu-princ-right">
-        <ul class="menu-elements">
-            <li data-animation="fadeInLeft" data-animation-delay="1s" class="animateMe"><a href="template-cpt_chalets.php">Nos Chalets</a></li>
-            <li data-animation="fadeInLeft" data-animation-delay="1.2s" class="animateMe"><a href="template-activites.html">Pêche</a></li>
-            <li data-animation="fadeInLeft" data-animation-delay="1.5s" class="animateMe"><a href="template-activites.html">VTT / Motoneige</a></li>
-            <li data-animation="fadeInLeft" data-animation-delay="1.8s" class="animateMe"><a href="#">Villégiature</a></li>
-            <li data-animation="fadeInLeft" data-animation-delay="2s" class="animateMe"><a href="#">À propos</a></li>
-            <li data-animation="fadeInLeft" data-animation-delay="2.2s" class="animateMe"><a href="#">Nos tarifs</a></li>
-            <li data-animation="fadeInLeft" data-animation-delay="2.4s" class="animateMe"><a href="#">Contactez-nous</a></li>
-            <li data-animation="fadeInLeft" data-animation-delay="2.6s" class="animateMe"><a href="#">Quoi apporter?</a></li>
-            <li data-animation="fadeInLeft" data-animation-delay="2.9s" class="animateMe"><a href="#">Réservez maintenant</a></li>
-        </ul>
-        <a href="#" class="menu-langue-mobile menu-menu-princ-langue">En</a>
-    </div>
-</div>
+<?php if (have_posts()) : ?>
+<?php while (have_posts()) : the_post(); ?>
 
 <div class="wrapper">
-    <section class="single-chalet-hero animateMe" data-animation="fadeInLeft">
-        <h2>Le retraité</h2>
+    <section class="single-chalet-hero animateMe" <?php post_class(); ?> id="post-<?php the_ID();?>" data-animation="fadeInLeft" >
+        <h2><?php the_title(); ?></h2>
 
         <div>
-            <p>Le dernier propriétaire du site, M. Denis Cardinal, avait acheté cette pourvoirie pour y vivre une
-                semi-retraite,
-                laissant du coup son titre de pilote d'avion pour celui de pourvoyeur. Comme il l'avait nommée C Relax,
-                c'est
-                exactement ce qu'il ressentait en habitant les lieux! Le chalet le retraité lui est dédié afin qu'une
-                trace de lui
-                persiste à la pourvoirie. Comme il était commandant de jets, qu'il fut pilote de ligne, certains
-                éléments de décor
-                rappelleront sa vie passée dont un cadre magnifique qu'il nous a offert et qui vous offre de visualiser
-                le dernier jet
-                qu'il a piloté avant de prendre sa retraite.
-            </p>
+            <?php the_content(); ?>
 
             <picture>
-                <source media="(max-width: 999px)" srcset="images/le-retraite-380w.png">
-                <source media="(min-width: 1024px)" srcset="images/le-retraite-hero.png">
-                <img src="images/le-retraite-hero.png" alt="Chalet le retraité">
+                <source media="(max-width: 999px)" srcset="<?php the_post_thumbnail_url(); ?>">
+                <source media="(min-width: 1024px)" srcset="<?php the_post_thumbnail_url(); ?>">
+                <img src="<?php the_post_thumbnail_url(); ?>" alt="Chalet le retraité">
             </picture>
         </div>
 
     </section>
 </div>
     <section class="single-chalet-composantes">
-        <div class="single-chalet-une-icone animateMe" data-animation="fadeIn">
-            <span class="iconify" data-inline="false" data-icon="cil:bathroom" style="font-size: 50px; color: #69B966;"></span>
-            <p>Douche et eau chaude</p>
-        </div>
 
+        <?php if( have_rows('cpt-chalet_fonctionnalites_bain') ): ?>
         <div class="single-chalet-une-icone animateMe" data-animation="fadeIn">
-            <span class="iconify" data-inline="false" data-icon="cil:bed" style="font-size: 50px; color: #69B966;"></span>
-            <p>2 chambres fermées</p>
+            <?php while( have_rows('cpt-chalet_fonctionnalites_bain') ): the_row(); ?>
+                <?php $image = get_sub_field('cpt-chalet_fonctionnalites_icone_bain'); ?>
+                <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
+                <p><?php the_sub_field('cpt-chalets_specification_bain'); ?></p>
+            <?php endwhile; ?>
         </div>
-
-        <div class="single-chalet-une-icone animateMe" data-animation="fadeIn">
-            <span class="iconify" data-inline="false" data-icon="ic:outline-people-alt" style="font-size: 50px; color: #69B966;"></span>
-            <p>capacité de 5 personnes</p>
-        </div>
+        <?php endif; ?>
     </section>
+
+    <?php endwhile; ?>
+<?php else: ?>
+
+<?php endif; ?>
 <div class="wrapper">
+
     <section class="single-chalet-gallerie animateMe" data-animation="fadeInLeft">
-
-    <img src="images/retraite5.png" alt="Le retraité photo 1">
-    <img src="images/retraite2.png" alt="Le retraité photo 1">
-    <img src="images/retraite3.png" alt="Le retraité photo 2">
-    <img src="images/retraite4.png" alt="Le retraité photo 3">
-
+<?php if( have_rows('cpt-chalet_gallerie') ): ?>
+    <?php while( have_rows('cpt-chalet_gallerie') ): the_row(); ?>
+        <?php $image = get_sub_field('cpt-chalets_photos'); ?>
+        <img src="<?php echo $image['url'] ?>" alt="<?php echo $image['alt'] ?>">
+    <?php endwhile; ?>
+<?php endif; ?>
 
 </section>
 </div>
-<footer class="footer">
-
-    <div class="footer-a-propos">
-
-        <a href=""><img class="footer-logo" src="images/logo.svg" alt="Logo Pourvoirie Lac-du-cerf"></a>
-
-        <p class="footer-a-propos-text">L'endroit idéal pour les pêcheur, amateurs de Quad ou familles qui rêvent d'un endroit paisible et
-            accueillant où venir décompresser du stress de la ville dans le confort d'un mignon chalet rustique...</p>
-
-        <a href="" class="footer-a-propos-link">À propos de nous</a>
-
-    </div>
-
-    <div class="menu-footer">
-        <ul class="menu-elements">
-            <li><a href="">Nos Chalets</a></li>
-            <li><a href="">Pêche</a></li>
-            <li><a href="">VTT / Motoneige</a></li>
-            <li><a href="">Villégiature</a></li>
-            <li><a href="">À propos</a></li>
-            <li><a href="">Nos tarifs</a></li>
-            <li><a href="">Contactez-nous</a></li>
-            <li><a href="">Quoi apporter?</a></li>
-            <li><a href="">Réservez maintenant</a></li>
-        </ul>
-
-        <a href="" class="footer-menu-langue">En</a>
-
-        <p class="footer-copyrights">Pourvoirie Lac-du-Cerf ©2020</p>
-
-    </div>
-
-    <div class="footer-image-langue">
-        <img src="images/bloc-sanitaire-380w.png" alt="">
-        <div class="footer-langue"><a href="" class="footer-menu-langue footer-langue-bouton">En</a></div>
-    </div>
-
-
-
-</footer>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
-
-</body>
-</html>
+<?php get_footer(); ?>
