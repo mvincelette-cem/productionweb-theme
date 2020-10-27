@@ -4,15 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Pourvoirie Lac Du Cerf</title>
+    <title><?php bloginfo('name');?></title>
 
     <link href="https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,400;0,700;1,700&family=Spectral:ital,wght@0,200;0,400;1,400;1,600&display=swap"
           rel="stylesheet">
-    <script src="https://code.iconify.design/1/1.0.6/iconify.min.js"></script>
-    <link rel="stylesheet" href="<?php bloginfo('template_url') ?>/css/main.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
-    <script src="<?php bloginfo('template_url'); ?>/js/script.js" defer></script>
+<!--    <script src="https://code.iconify.design/1/1.0.6/iconify.min.js"></script>-->
+<!--    <link rel="stylesheet" href="--><?php //bloginfo('template_url') ?><!--/css/main.css">-->
+<!--    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">-->
+<!--    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">-->
+<!--    <script src="--><?php //bloginfo('template_url'); ?><!--/js/script.js" defer></script>-->
 
     <?php wp_head(); ?>
 </head>
