@@ -75,8 +75,8 @@
             <img class="header-logo" src="<?php bloginfo('template_url'); ?>/images/logo.svg"
                  alt="Logo Pourvoirie Lac-du-cerf">
             <div class="header-menu-bouton">
-                <a href="" class="header-reservez-link">Réservez maintenant</a>
-                <a href="" class="header-hamburger"><span class="iconify" data-inline="false"
+                <a href="#" class="header-reservez-link">Réservez maintenant</a>
+                <a href="#" class="header-hamburger"><span class="iconify" data-inline="false"
                                                           data-icon="clarity:menu-line"
                                                           style="font-size: 32px;"></span></a>
             </div>

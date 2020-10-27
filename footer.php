@@ -1,6 +1,7 @@
 <?php if (!is_front_page()) : ?>
 </div>
 <?php else: ?>
+<? endif; ?>
 <footer class="footer">
 
     <div class="footer-a-propos">
@@ -39,9 +40,10 @@
     </div>
 
 
-    <?php wp_footer(); ?>
+
 </footer>
+
+    <?php wp_footer(); ?>
 
 </body>
 </html>
-<? endif; ?>
