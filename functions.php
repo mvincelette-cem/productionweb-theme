@@ -69,6 +69,7 @@ function cpt_chalets() {
 add_action( 'init', 'cpt_chalets', 0 );
 
 
+
 function pourvoirie_header_scripts(){
     if ($GLOBALS['pagenow'] != 'wp-login.php' && !is_admin()) {
         wp_enqueue_style( 'styles', get_template_directory_uri() . '/css/main.css', array(), '1', 'all');
