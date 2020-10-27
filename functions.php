@@ -77,6 +77,8 @@ function pourvoirie_header_scripts(){
 }
 
 function add_theme_scripts(){
+    wp_enqueue_script( 'script', 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js', array( 'jquery' ),('3.2.1'),  true);
+    wp_enqueue_script( 'script', 'https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js', array( 'jquery' ),('1'),  true);
     wp_enqueue_script( 'script', get_template_directory_uri() . '/js/script.js', array( 'jquery' ),('1'),  true);
     wp_enqueue_script( 'script', 'https://code.iconify.design/1/1.0.6/iconify.min.js', array( 'jquery' ),('1.0.6'),  true);
 }
