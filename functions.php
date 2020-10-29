@@ -1,6 +1,16 @@
 <?php
 
-add_theme_support('post-thumbnails');
+if (function_exists('add_theme_support')) {
+
+    add_theme_support('menus');
+    add_theme_support('post-thumbnails');
+    add_image_size('large', 700, '', true);
+    add_image_size('medium', 250, '', true);
+    add_image_size('small', 120, '', true);
+    add_image_size('custom-size', 700, 200, true);
+}
+
+
 
 // Register Custom Post Type Chalets
 function cpt_chalets() {
@@ -57,4 +67,23 @@ function cpt_chalets() {
 
 }
 add_action( 'init', 'cpt_chalets', 0 );
+
+
+
+function pourvoirie_header_scripts(){
+    if ($GLOBALS['pagenow'] != 'wp-login.php' && !is_admin()) {
+        wp_enqueue_style( 'styles', get_template_directory_uri() . '/css/main.css', array(), '1', 'all');
+//        wp_enqueue_style( 'styles-anim', 'https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css' , array(), '4.1.1', 'all');
+        wp_enqueue_style( 'styles-anim', 'https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css' , array(), '3.5.2', 'all');
+    }
+}
+
+function add_theme_scripts(){
+    wp_enqueue_script( 'script-jquery', 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js', array( 'jquery' ),('3.2.1'),  true);
+    wp_enqueue_script( 'script-jwaypoints', 'https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js', array( 'jquery' ),('1'),  true);
+    wp_enqueue_script( 'mon-script', get_template_directory_uri() . '/js/script.js', array(),('1'),  true);
+    wp_enqueue_script( 'icon-script', 'https://code.iconify.design/1/1.0.6/iconify.min.js', array( 'jquery' ),('1.0.6'),  true);
+}
+add_action( 'wp_enqueue_scripts', 'add_theme_scripts' );
+add_action('init', 'pourvoirie_header_scripts');
 
