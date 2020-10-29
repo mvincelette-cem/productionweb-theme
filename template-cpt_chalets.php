@@ -22,7 +22,7 @@
                 <source media="(max-width: 599px)" srcset="<?php the_post_thumbnail_url(); ?>">
                 <source media="(min-width: 600px) and (max-width: 1023px)" srcset="<?php the_post_thumbnail_url(); ?>">
                 <source media="(min-width: 1024px)" srcset="<?php the_post_thumbnail_url(); ?>">
-                <img src="<?php the_post_thumbnail_url(); ?>" alt="Hero">
+                <img src="<?php the_post_thumbnail_url(); ?>">
             </picture>
         </div>
     </section>

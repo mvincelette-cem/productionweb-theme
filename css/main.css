@@ -2421,8 +2421,8 @@ section.infolettre div.wrapper a.btn:hover {
     padding: 60px 100px;
   }
   .single-chalet-gallerie img {
-    width: auto;
-    height: auto;
+    width: 40%;
+    height: 40%;
   }
 }
 
