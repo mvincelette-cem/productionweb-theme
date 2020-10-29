@@ -16,8 +16,7 @@
     <section class="tem-chalet-info animateMe" data-animation="fadeInLeft">
 
         <div>
-            <p><?php echo the_content(); ?>
-            </p>
+            <?php echo the_content(); ?>
 
             <picture>
                 <source media="(max-width: 599px)" srcset="<?php the_post_thumbnail_url(); ?>">
@@ -80,38 +79,6 @@
 
         <?php endif; ?>
     </section>
-
-
-
-<!---->
-<!--    <section class="tem-chalet-bloc-sanitaire animateMe" data-animation="fadeInLeft">-->
-<!---->
-<!--        <h3>Le bloc sanitaire</h3>-->
-<!--        <div>-->
-<!--            <picture>-->
-<!--                <source media="(max-width: 599px)" srcset="images/bloc-sanitaire-380w.png">-->
-<!--                <source media="(min-width: 600px) and (max-width: 1023px)" srcset="images/bloc-sanitaire-768w.png">-->
-<!--                <source media="(min-width: 1024px)" srcset="images/bloc-sanitaire.png">-->
-<!--                <img src="images/bloc-sanitaire.png" alt="Le bloc sanitaire">-->
-<!--            </picture>-->
-<!---->
-<!--            <div>-->
-<!--                <p>Le bloc sanitaire de la Pourvoirie Lac-du-Cerf est situé au cœur des 12 chalets en location afin de-->
-<!--                    <strong>permettre-->
-<!--                        aux visiteurs qui n'ont pas accès à de salle de bain complète à l'intérieur de leur chalet de se-->
-<!--                        prévaloir d'une-->
-<!--                        bonne douche!</strong> Munie de 2 douches individuelles intimes, d'une toilette et d'un lavabo,-->
-<!--                    le bloc sanitaire est récent-->
-<!--                    et propre. <strong>VOUS POUVEZ VERRROUILLER LA PORTE PRINCIPALE POUR PLUS D'INTIMITÉ!</strong> <br>-->
-<!--                    <br>-->
-<!---->
-<!--                    <strong class="gras-vert">Une laveuse à linge pour dépannage est maintenant disponible pour les-->
-<!--                        clients qui en font la demande.</strong>-->
-<!--                </p>-->
-<!---->
-<!--            </div>-->
-<!--        </div>-->
-<!--    </section>-->
     </div>
 
 <?php get_footer(); ?>
