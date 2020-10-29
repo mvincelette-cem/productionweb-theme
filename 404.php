@@ -18,8 +18,8 @@
     <div class="menu-menu-princ-right">
         <ul class="menu-elements">
             <li data-animation="fadeInLeft" data-animation-delay="1s" class="animateMe"><a href="template-chalets.html">Nos Chalets</a></li>
-            <li data-animation="fadeInLeft" data-animation-delay="1.2s" class="animateMe"><a href="template-activites.html">Pêche</a></li>
-            <li data-animation="fadeInLeft" data-animation-delay="1.5s" class="animateMe"><a href="template-activites.html">VTT / Motoneige</a></li>
+            <li data-animation="fadeInLeft" data-animation-delay="1.2s" class="animateMe"><a href="template-cpt_activites.php">Pêche</a></li>
+            <li data-animation="fadeInLeft" data-animation-delay="1.5s" class="animateMe"><a href="template-cpt_activites.php">VTT / Motoneige</a></li>
             <li data-animation="fadeInLeft" data-animation-delay="1.8s" class="animateMe"><a href="#">Villégiature</a></li>
             <li data-animation="fadeInLeft" data-animation-delay="2s" class="animateMe"><a href="#">À propos</a></li>
             <li data-animation="fadeInLeft" data-animation-delay="2.2s" class="animateMe"><a href="#">Nos tarifs</a></li>
