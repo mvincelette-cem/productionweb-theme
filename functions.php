@@ -148,17 +148,11 @@ add_action('init', 'cpt_activites', 0);
 
 function ajouter_menu(){
     register_nav_menus(array(
-        "menu_principal" => 'Menu principal',
+        "menu_principal" => 'menu_principal',
         "menu_footer" => 'Menu du pied de page'
     ));
 
 }
 add_action('init', 'ajouter_menu');
 
-add_filter ( 'nav_menu_css_class', 'menu_item_class', 10, 4 );
-
-function menu_item_class ( $classes, $item, $args, $depth ){
-    $classes[] = 'menu-li';
-    return $classes;
-}
 
