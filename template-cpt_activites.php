@@ -7,13 +7,16 @@
 
 <section class="tem-activite-description animateMe" data-animation="fadeInLeft">
 
-    <h2><?php the_title(); ?></h2>
-    <?php while (have_posts()): the_post(); ?>
+    <div class="wrapper">
+        <div>
+            <h2><?php the_title(); ?></h2>
+            <?php while (have_posts()): the_post(); ?>
 
-        <p><?php echo the_content(); ?> </p>
+                <?php echo the_content(); ?>
 
-    <?php endwhile; ?>
-
+            <?php endwhile; ?>
+        </div>
+    </div>
 </section>
 
 <?php
@@ -27,16 +30,16 @@ query_posts(array(
 <div class="wrapper">
     <section class="tem-activite-liste animateMe" data-animation="fadeIn">
 
-        <?php if(have_posts()) : ?>
-        <?php while (have_posts()) : the_post(); ?>
+        <?php if (have_posts()) : ?>
+            <?php while (have_posts()) : the_post(); ?>
 
-        <a href="<?php the_permalink(); ?>">
-            <div class="une-activite">
-                <img src="<?php the_post_thumbnail_url(); ?>" alt="">
-                <h4><?php the_title(); ?></h4>
-            </div>
-        </a>
-        <?php endwhile; ?>
+                <a href="<?php the_field('lien_activite_#1'); ?>">
+                    <div class="une-activite">
+                        <img src="<?php the_post_thumbnail_url(); ?>" alt="">
+                        <h4><?php the_title(); ?></h4>
+                    </div>
+                </a>
+            <?php endwhile; ?>
         <?php endif; ?>
 
     </section>
