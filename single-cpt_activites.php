@@ -6,12 +6,17 @@
                 <?php while (have_posts()) :
                     the_post(); ?>
 
-                    <section class="single-activite-info testetestetest animateMe <?php post_class(); ?>"  id="post-<?php the_ID();?>" data-animation="fadeInLeft">
+                    <section class="single-activite-info animateMe " <?php post_class(); ?> id="post-<?php the_ID();?>" data-animation="fadeInLeft">
                 <h2><?php the_title(); ?></h2>
                 <div>
                     <?php the_content(); ?>
                     <picture>
-                        <img src="<?php the_post_thumbnail_url('custom_size'); ?>" alt="<?php the_title(); ?>">
+                      <?php the_post_thumbnail('custom_size');?>
+
+
+
+
+<!--                        <img src="--><?php //the_post_thumbnail_url('custom_size'); ?><!--" alt="--><?php //the_title(); ?><!--">-->
                     </picture>
                 </div>
             </section>
