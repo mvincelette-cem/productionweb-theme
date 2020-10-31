@@ -4,7 +4,7 @@
 <?php while (have_posts()) : the_post(); ?>
 
 <div class="wrapper">
-    <section class="single-chalet-hero animateMe" <?php post_class(); ?> id="post-<?php the_ID();?>" data-animation="fadeInLeft" >
+    <section class="single-chalet-hero animateMe <?php post_class(); ?>" id="post-<?php the_ID();?>" data-animation="fadeInLeft" >
         <h2><?php the_title(); ?></h2>
 
         <div>

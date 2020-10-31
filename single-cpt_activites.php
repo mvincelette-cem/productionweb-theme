@@ -1,25 +1,24 @@
 <?php get_header(); ?>
 
-<?php if (have_posts()) : ?>
-    <?php while (have_posts()) :
-        the_post(); ?>
 
         <div class="wrapper">
-            <section class="single-activite-info animateMe" <?php post_class(); ?> data-animation="fadeInLeft">
+            <?php if (have_posts()) : ?>
+                <?php while (have_posts()) :
+                    the_post(); ?>
+
+                    <section class="single-activite-info testetestetest animateMe <?php post_class(); ?>"  id="post-<?php the_ID();?>" data-animation="fadeInLeft">
                 <h2><?php the_title(); ?></h2>
                 <div>
                     <?php the_content(); ?>
-
                     <picture>
-                        <source media="(max-width: 599px)" srcset="<?php the_post_thumbnail_url(); ?>">
-                        <source media="(min-width: 600px) and (max-width: 1023px)"
-                                srcset="<?php the_post_thumbnail_url(); ?>">
-                        <source media="(min-width: 1024px)" srcset="<?php the_post_thumbnail_url(); ?>">
-                        <img src="<?php the_post_thumbnail_url(); ?>" alt="Chalet le vieux poète">
+                        <img src="<?php the_post_thumbnail_url('custom_size'); ?>" alt="<?php the_title(); ?>">
                     </picture>
                 </div>
-
             </section>
+            <?php endwhile; ?>
+
+            <?php endif; ?>
+
         </div>
 
 
@@ -39,14 +38,12 @@
 
         <div class="wrapper">
             <section class="calendrier-pêche">
-
-
                 <h3 class="animateMe" data-animation="fadeInDown">Plans d’eau – Exceptions réglementaires</h3>
 
-
+                <?php if (have_posts()) : ?>
+                <?php while (have_posts()) : the_post(); ?>
                 <article class="une-periode animateMe" data-animation="fadeInLeft">
-                    <?php if (have_posts()) : ?>
-                        <?php while (have_posts()) : the_post(); ?>
+
 
                             <h5><?php the_title(); ?></h5>
                             <div class="contenu-periode">
@@ -54,15 +51,12 @@
                                 <?php echo the_content(); ?>
 
                             </div>
-                        <?php endwhile; ?>
-                    <?php endif; ?>
-                </article>
 
+                </article>
+          <?php endwhile; ?>
+                    <?php endif; ?>
             </section>
         </div>
 
-    <?php endwhile; ?>
-
-<?php endif; ?>
 
 <?php get_footer(); ?>

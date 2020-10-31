@@ -1493,7 +1493,7 @@ section.info-accueil div.wrapper div p {
   padding: 1em 5em 2em 5em;
 }
 
-section.info-accueil div.wrapper div span {
+section.info-accueil div.wrapper div span, .single-activite-info span {
   color: #69B966;
 }
 
@@ -2564,8 +2564,8 @@ div.wrapper section .single-chalet-hero div{
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+      -ms-flex-direction: row;
+          flex-direction: row;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -2673,8 +2673,8 @@ div.wrapper section .single-chalet-hero div{
   .single-activite-info div {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+        -ms-flex-direction: row;
+            flex-direction: row;
     -webkit-box-pack: end;
         -ms-flex-pack: end;
             justify-content: flex-end;
