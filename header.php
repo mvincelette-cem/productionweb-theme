@@ -41,27 +41,6 @@
         ) );
         ?>
 
-<!--        <ul class="menu-elements">-->
-<!--            <li data-animation="fadeInLeft" data-animation-delay="1s" class="animateMe"><a href="template-cpt_chalets.php">Nos-->
-<!--                    Chalets</a></li>-->
-<!--            <li data-animation="fadeInLeft" data-animation-delay="1.2s" class="animateMe"><a-->
-<!--                        href="template-cpt_activites.php">Pêche</a></li>-->
-<!--            <li data-animation="fadeInLeft" data-animation-delay="1.5s" class="animateMe"><a-->
-<!--                        href="template-cpt_activites.php">VTT / Motoneige</a></li>-->
-<!--            <li data-animation="fadeInLeft" data-animation-delay="1.8s" class="animateMe"><a href="#">Villégiature</a>-->
-<!--            </li>-->
-<!--            <li data-animation="fadeInLeft" data-animation-delay="2s" class="animateMe"><a href="#">À propos</a></li>-->
-<!--            <li data-animation="fadeInLeft" data-animation-delay="2.2s" class="animateMe"><a href="#">Nos tarifs</a>-->
-<!--            </li>-->
-<!--            <li data-animation="fadeInLeft" data-animation-delay="2.4s" class="animateMe"><a href="#">Contactez-nous</a>-->
-<!--            </li>-->
-<!--            <li data-animation="fadeInLeft" data-animation-delay="2.6s" class="animateMe"><a href="#">Quoi apporter?</a>-->
-<!--            </li>-->
-<!--            <li data-animation="fadeInLeft" data-animation-delay="2.9s" class="animateMe"><a href="#">Réservez-->
-<!--                    maintenant</a></li>-->
-<!--        </ul>-->
-<!--        <a href="" class="menu-langue-mobile menu-menu-princ-langue">En</a>-->
-
 </div>
 
 <?php if (is_front_page()) : ?>

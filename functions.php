@@ -206,7 +206,7 @@ add_action('init', 'cpt_periodes', 0);
 function ajouter_menu(){
     register_nav_menus(array(
         "menu_principal" => 'menu_principal',
-        "menu_footer" => 'Menu du pied de page'
+        "menu_footer" => 'menu_footer'
     ));
 
 }

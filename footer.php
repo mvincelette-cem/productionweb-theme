@@ -15,24 +15,18 @@
 
     </div>
 
-    <div class="menu-footer">
-        <ul class="menu-elements">
-            <li><a href="">Nos Chalets</a></li>
-            <li><a href="">Pêche</a></li>
-            <li><a href="">VTT / Motoneige</a></li>
-            <li><a href="">Villégiature</a></li>
-            <li><a href="">À propos</a></li>
-            <li><a href="">Nos tarifs</a></li>
-            <li><a href="">Contactez-nous</a></li>
-            <li><a href="">Quoi apporter?</a></li>
-            <li><a href="">Réservez maintenant</a></li>
-        </ul>
+
+        <?php wp_nav_menu( array(
+            'container_class'   => "menu-footer", // (string) Class that is applied to the container. Default 'menu-{menu slug}-container'.
+            'theme_location'    => "menu_footer", // (string) Theme location to be used. Must be registered with register_nav_menu() in order to be selectable by the user.
+            'items_wrap'        => '<ul class="menu-elements">%3$s</ul>', // (string) How the list items should be wrapped. Default is a ul with an id and class. Uses printf() format with numbered placeholders.
+        ) );
+        ?>
 
         <a href="" class="footer-menu-langue">En</a>
 
         <p class="footer-copyrights">Pourvoirie Lac-du-Cerf ©2020</p>
 
-    </div>
 
     <div class="footer-image-langue">
         <img src="<?php bloginfo('template_url'); ?>/images/bloc-sanitaire-380w.png" alt="">
