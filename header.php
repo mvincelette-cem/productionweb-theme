@@ -16,7 +16,7 @@
 
 <div class="menu-menu-princ-overlay" id="overlay">
     <div class="menu-menu-princ-left">
-        <a href="front-page.php"><img class="menu-menu-princ-logo"
+        <a href="<?php bloginfo('url') ?>"><img class="menu-menu-princ-logo"
                                       src="<?php echo get_template_directory_uri(); ?>/images/logo.svg"
                                       alt="Logo Pourvoirie Lac-du-cerf"></a>
         <ul class="menu-contacts">
@@ -31,7 +31,7 @@
                                                   style="color: #69b966; font-size: 48px;"></span> <a href="">17 chemin
                     filion, Lac-du-cerf, QC, J0W1S0</a></li>
         </ul>
-        <a href="" class="menu-langue-desktop menu-menu-princ-langue">En</a>
+        <a href="#" class="menu-langue-desktop menu-menu-princ-langue">En</a>
     </div>
 
         <?php wp_nav_menu( array(
@@ -82,8 +82,8 @@
             <img class="header-logo" src="<?php bloginfo('template_url'); ?>/images/logo.svg"
                  alt="Logo Pourvoirie Lac-du-cerf">
             <div class="header-menu-bouton">
-                <a href="#" class="header-reservez-link">Réservez maintenant</a>
-                <a href="#" class="header-hamburger"><span class="iconify" data-inline="false"
+                <a href="<?php bloginfo('url') ?>" class="header-reservez-link">Réservez maintenant</a>
+                <a href="#" id="toggle" class="header-hamburger"><span class="iconify" data-inline="false"
                                                           data-icon="clarity:menu-line"
                                                           style="font-size: 32px;"></span></a>
             </div>

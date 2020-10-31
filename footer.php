@@ -11,7 +11,7 @@
         <p class="footer-a-propos-text">L'endroit idéal pour les pêcheur, amateurs de Quad ou familles qui rêvent d'un endroit paisible et
             accueillant où venir décompresser du stress de la ville dans le confort d'un mignon chalet rustique...</p>
 
-        <a href="" class="footer-a-propos-link">À propos de nous</a>
+        <a href="#" class="footer-a-propos-link">À propos de nous</a>
 
     </div>
 
