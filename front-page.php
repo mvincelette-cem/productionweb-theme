@@ -79,30 +79,59 @@ get_header();
 
 <section class="pecheurs">
     <div class="title">
-        <h1>Nos grands pêcheurs</h1>
+        <h1><?php the_field('section_pecheurs_titre');?></h1>
     </div>
-    <div class="wrapper animateMe" data-animation="fadeIn" data-animation-delay="1.5s">
-
+    <div class="wrapper animateMe" data-animation="fadeIn" data-animation-delay="0.5s">
+        <?php
+        query_posts(array(
+            'post_type' => 'cpt_gallerie_fp',
+            'post_status' => 'publish',
+            'showposts' => 8,
+            'orderby' => 'title',
+            'order' => 'ASC'
+        ));
+        ?>
         <div class="upper">
-            <div class="item"><a href="#" alt="#"><img src="images/gallery/1.jpg" alt="img1"></a></div>
-            <div class="item"><a href="#" alt="#"><img src="images/gallery/2.jpg" alt="img1"></a></div>
-            <div class="item"><a href="#" alt="#"><img src="images/gallery/3.jpg" alt="img1"></a></div>
-            <div class="item"><a href="#" alt="#"><img src="images/gallery/4.jpg" alt="img1"></a></div>
-            <div class="item"><a href="#" alt="#"><img src="images/gallery/1.jpg" alt="img1"></a></div>
-            <div class="item"><a href="#" alt="#"><img src="images/gallery/2.jpg" alt="img1"></a></div>
-            <div class="item"><a href="#" alt="#"><img src="images/gallery/3.jpg" alt="img1"></a></div>
-            <div class="item"><a href="#" alt="#"><img src="images/gallery/4.jpg" alt="img1"></a></div>
+
+            <?php if (have_posts()) : ?>
+                <?php while (have_posts()) : the_post(); ?>
+                    <div class="item"><a href="#" title="<?php the_title_attribute(); ?>">
+                            <?php if ( has_post_thumbnail() ) : ?>
+                                <?php the_post_thumbnail(); ?>
+
+                            <?php endif; ?>
+                        </a>
+                    </div>
+
+                <?php endwhile; ?>
+            <?php endif; ?>
+        <?php wp_reset_query();?>
 
         </div>
+        <?php
+        query_posts(array(
+            'post_type' => 'cpt_gallerie_fp',
+            'post_status' => 'publish',
+            'showposts' => 8,
+            'orderby' => 'title',
+            'order' => 'DESC'
+        ));
+        ?>
         <div class="lower">
-            <div class="item"><a href="#" alt="#"><img src="images/gallery/5.jpg" alt=""></a></div>
-            <div class="item"><a href="#" alt="#"><img src="images/gallery/6.jpg" alt=""></a></div>
-            <div class="item"><a href="#" alt="#"><img src="images/gallery/7.jpg" alt=""></a></div>
-            <div class="item"><a href="#" alt="#"><img src="images/gallery/8.jpg" alt=""></a></div>
-            <div class="item"><a href="#" alt="#"><img src="images/gallery/5.jpg" alt=""></a></div>
-            <div class="item"><a href="#" alt="#"><img src="images/gallery/6.jpg" alt=""></a></div>
-            <div class="item"><a href="#" alt="#"><img src="images/gallery/7.jpg" alt=""></a></div>
-            <div class="item"><a href="#" alt="#"><img src="images/gallery/8.jpg" alt=""></a></div>
+
+            <?php if (have_posts()) : ?>
+                <?php while (have_posts()) : the_post(); ?>
+                    <div class="item"><a href="#" title="<?php the_title_attribute(); ?>">
+                            <?php if ( has_post_thumbnail() ) : ?>
+                                    <?php the_post_thumbnail(); ?>
+
+                            <?php endif; ?>
+                        </a>
+                    </div>
+
+                <?php endwhile; ?>
+            <?php endif; ?>
+            <?php wp_reset_query();?>
 
         </div>
     </div>
@@ -110,22 +139,23 @@ get_header();
 
 <section class="pub">
     <div class="left-side">
-        <h1>Vous souhaitez d’un beau séjour en famille?</h1>
+        <h1><?php the_field('section_pub_titre'); ?></h1>
         <div>
-            <h2>Les nuitées pour les enfants de 12 ans et moins sont gratuites !</h2>
-            <p>Cette gratuité s'applique pour les nuitées seulement et non pour les forfaits et il doit y avoir deux adultes présents dans le chalets</p>
-            <div class="align-btn"><a href="#" class="btn" alt="reserver">Réserver maintenant !</a></div>
+            <h2><?php the_field('section_pub_info_titre'); ?></h2>
+            <p><?php the_field('section_pub_info_description'); ?></p>
+            <div class="align-btn"><a href="#" class="btn" alt="reserver"><?php the_field('section_pub_info_bouton'); ?></a></div>
         </div>
     </div>
-    <div class="right-side animateMe" data-animation="fadeInRight"><img src="images/img-pub.jpg" alt="pub" width="821" height="981"></div>
+    <?php $img = get_field('section_pub_info_image'); ?>
+    <div class="right-side animateMe" data-animation="fadeInRight"><img src="<?php echo $img['url']; ?>" alt="<?php echo $img['alt']; ?>" width="821" height="981"></div>
 </section>
 
 <section class="infolettre animateMe" data-animation="fadeInUp" data-animation-delay="0.5s">
     <div class="wrapper">
-        <h1>Abonnez-vous à notre infolettre !</h1>
-        <p>Pour toutes informations et promotions pour notre pourvoirie, inscrivez-vous à notre infolettre.</p>
+        <h1><?php the_field('section_infolettre_titre');?></h1>
+        <p><?php the_field('section_infolettre_description');?></p>
         <input type="email" placeholder="courriel">
-        <a class="btn" href="#" alt="soumettre">Soumettre</a>
+        <a class="btn" href="#" alt="soumettre"><?php the_field('section_infolettre_bouton_texte');?></a>
     </div>
 </section>
 <?php get_footer(); ?>

@@ -8,9 +8,9 @@ if (function_exists('add_theme_support')) {
     add_image_size('medium', 250, '', true);
     add_image_size('small', 120, '', true);
     add_image_size('custom-size', 775, 637, true);
+    add_image_size('single-activite', 960, 720, true);
 
 }
-
 
 // Register Custom Post Type Chalets
 
@@ -202,6 +202,63 @@ function cpt_periodes()
 
 add_action('init', 'cpt_periodes', 0);
 
+
+// Register Custom Post Type
+function cpt_gallerie_frontpage() {
+
+    $labels = array(
+        'name'                  => _x( 'Gallerie Pecheurs', 'Post Type General Name', 'productionweb' ),
+        'singular_name'         => _x( 'Gallerie Pecheur', 'Post Type Singular Name', 'productionweb' ),
+        'menu_name'             => __( 'Gallerie FrontPage', 'productionweb' ),
+        'name_admin_bar'        => __( 'Gallerie FrontPage', 'productionweb' ),
+        'archives'              => __( 'Item Archives', 'productionweb' ),
+        'attributes'            => __( 'Item Attributes', 'productionweb' ),
+        'parent_item_colon'     => __( 'Parent Item:', 'productionweb' ),
+        'all_items'             => __( 'All Items', 'productionweb' ),
+        'add_new_item'          => __( 'Add New Item', 'productionweb' ),
+        'add_new'               => __( 'Add New', 'productionweb' ),
+        'new_item'              => __( 'New Item', 'productionweb' ),
+        'edit_item'             => __( 'Edit Item', 'productionweb' ),
+        'update_item'           => __( 'Update Item', 'productionweb' ),
+        'view_item'             => __( 'View Item', 'productionweb' ),
+        'view_items'            => __( 'View Items', 'productionweb' ),
+        'search_items'          => __( 'Search Item', 'productionweb' ),
+        'not_found'             => __( 'Not found', 'productionweb' ),
+        'not_found_in_trash'    => __( 'Not found in Trash', 'productionweb' ),
+        'featured_image'        => __( 'Featured Image', 'productionweb' ),
+        'set_featured_image'    => __( 'Set featured image', 'productionweb' ),
+        'remove_featured_image' => __( 'Remove featured image', 'productionweb' ),
+        'use_featured_image'    => __( 'Use as featured image', 'productionweb' ),
+        'insert_into_item'      => __( 'Insert into item', 'productionweb' ),
+        'uploaded_to_this_item' => __( 'Uploaded to this item', 'productionweb' ),
+        'items_list'            => __( 'Items list', 'productionweb' ),
+        'items_list_navigation' => __( 'Items list navigation', 'productionweb' ),
+        'filter_items_list'     => __( 'Filter items list', 'productionweb' ),
+    );
+    $args = array(
+        'label'                 => __( 'Gallerie Pecheur', 'productionweb' ),
+        'description'           => __( 'Post Type Description', 'productionweb' ),
+        'labels'                => $labels,
+        'supports'              => array( 'title', 'editor', 'thumbnail', 'custom-fields' ),
+        'taxonomies'            => array( 'category', 'post_tag' ),
+        'hierarchical'          => false,
+        'public'                => true,
+        'show_ui'               => true,
+        'show_in_menu'          => true,
+        'menu_position'         => 5,
+        'menu_icon' => 'dashicons-format-gallery',
+        'show_in_admin_bar'     => true,
+        'show_in_nav_menus'     => true,
+        'can_export'            => true,
+        'has_archive'           => true,
+        'exclude_from_search'   => false,
+        'publicly_queryable'    => true,
+        'capability_type'       => 'page',
+    );
+    register_post_type( 'cpt_gallerie_fp', $args );
+
+}
+add_action( 'init', 'cpt_gallerie_frontpage', 0 );
 
 
 function ajouter_menu(){

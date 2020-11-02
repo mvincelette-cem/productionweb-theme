@@ -11,12 +11,10 @@
                 <div>
                     <?php the_content(); ?>
                     <picture>
-                      <?php the_post_thumbnail('custom_size');?>
+                    <?php if ( has_post_thumbnail() ) : ?>
+                        <?php the_post_thumbnail(array(920,760)); ?>
 
-
-
-
-<!--                        <img src="--><?php //the_post_thumbnail_url('custom_size'); ?><!--" alt="--><?php //the_title(); ?><!--">-->
+                    <?php endif; ?>
                     </picture>
                 </div>
             </section>

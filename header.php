@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title><?php wp_title(''); ?></title>
+    <title><?php bloginfo('name'); ?> | <?php is_front_page() ? bloginfo('description') : wp_title(); ?></title>
 
     <link href="https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,400;0,700;1,700&family=Spectral:ital,wght@0,200;0,400;1,400;1,600&display=swap"
           rel="stylesheet">
@@ -43,7 +43,7 @@
 
 </div>
 
-<?php if (is_front_page()) : ?>
+<?php if (is_front_page() || is_404()) : ?>
 
     <header class="h-accueil">
         <div>
@@ -58,8 +58,8 @@
     <header class="header">
 
         <div class="header-content">
-            <img class="header-logo" src="<?php bloginfo('template_url'); ?>/images/logo.svg"
-                 alt="Logo Pourvoirie Lac-du-cerf">
+            <a href="<?php bloginfo('url') ?>"><img class="header-logo" src="<?php bloginfo('template_url'); ?>/images/logo.svg"
+                 alt="Logo Pourvoirie Lac-du-cerf"></a>
             <div class="header-menu-bouton">
                 <a href="<?php bloginfo('url') ?>" class="header-reservez-link">Réservez maintenant</a>
                 <a href="#" id="toggle" class="header-hamburger"><span class="iconify" data-inline="false"
